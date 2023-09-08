@@ -1,0 +1,167 @@
+@use "variables";
+.resultado__container {
+  height: 100%;
+
+  z-index: 100;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  visibility: hidden;
+  opacity: 0;
+  margin: 0 auto;
+
+  .resultado__back {
+    margin: 0 auto;
+    width: 90%;
+    cursor: pointer;
+  }
+
+  .resultado__texto {
+    width: 85%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin: 0;
+      font-weight: 500;
+    }
+    h3 {
+      font-size: 3rem;
+      color: gray;
+      font-weight: 300;
+      margin: 0;
+      padding-top: 20px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.resultado__container--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.resultado__color {
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+
+  &-contenedor {
+    width: 22.5%;
+    height: 100%;
+    position: relative;
+  }
+
+  .resultado__color-contenedor::before,
+  .resultado__color-contenedor::after {
+    content: attr(
+      data-range
+    ); /* Utiliza el atributo data-range como contenido */
+    position: absolute;
+    bottom: -1.5rem; /* Ajusta la posición en la parte inferior */
+    font-size: 0.8rem;
+    white-space: nowrap; /* Evita el salto de línea en los valores */
+  }
+
+  &-amarillo {
+    background-color: rgba(253, 217, 81, 255);
+    border-radius: 10px 0 0 10px;
+  }
+
+  .resultado__color-amarillo::after {
+    content: "< 18.5";
+    position: absolute;
+    right: -15px;
+    bottom: -30px;
+  }
+
+  &-verde {
+    background-color: rgba(90, 220, 120, 255);
+  }
+
+  .resultado__color-verde::after {
+    content: "25";
+    position: absolute;
+    right: -5px;
+    bottom: -30px;
+  }
+
+  &-naranja {
+    background-color: rgba(245, 166, 35, 255);
+  }
+
+  .resultado__color-naranja::after {
+    content: "30 >";
+    position: absolute;
+    right: -15px;
+    bottom: -30px;
+  }
+
+  &-rojo {
+    background-color: rgb(247, 100, 153);
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.resultado__descripcion {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+  h5 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  h5::before {
+    content: "\2022"; /* Código Unicode para el círculo */
+    position: relative;
+    left: -5px;
+    top: 8px;
+
+    color: variables.$secondColor; /* Color del círculo */
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  span {
+    margin-left: 20px;
+    color: variables.$secondColor;
+    font-size: 1.5rem;
+  }
+}
+
+.guardar__button {
+  width: 80%;
+
+  height: 50px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  border-radius: 20px;
+  border: none;
+  background-color: variables.$secondColor;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 2px;
+  cursor: pointer;
+}

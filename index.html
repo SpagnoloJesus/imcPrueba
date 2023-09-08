@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>imc app</title>
+    <link rel="stylesheet" href="public/bundle.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <article class="header__container">
+        <section class="header__container-bar">
+          <div class="header__container-logo">
+            <h1 class="header-logo">IMC<span>alculadora</span></h1>
+            <img
+              class="header-logo-img"
+              src="./assets/assets_icons/logo.svg"
+              alt=""
+            />
+          </div>
+        </section>
+      </article>
+    </header>
+    <main>
+      <article class="parameters__contain">
+        <section class="parameters__contain-wh">
+          <h2 class="parameters__title">Peso</h2>
+          <section class="parameters__subcontain">
+            <label class="parameters__subtitle" for="weight">Kg</label>
+            <input
+              class="parameters__value"
+              type="number"
+              id="weight"
+              value="70"
+            />
+          </section>
+        </section>
+        <section class="parameters__contain-wh">
+          <h2 class="parameters__title">Altura</h2>
+          <section class="parameters__subcontain">
+            <label class="parameters__subtitle" for="height">Cm</label>
+            <input
+              class="parameters__value"
+              type="number"
+              id="height"
+              value="150"
+            />
+          </section>
+        </section>
+      </article>
+      <section>
+        <h2 class="parameters__title-gen gen-separador">Genero</h2>
+      </section>
+      <article class="parameters__contain" id="gen">
+        <section data-genero="mujer" class="parameters__contain-wh">
+          <section
+            class="parameters__subcontain parameters__subcontain-gender"
+            id="girlSelect"
+          >
+            <div class="parameters__subcontain-image">
+              <img class="img" src="./assets/fem.png" alt="" />
+            </div>
+            <h4>Srta</h4>
+          </section>
+        </section>
+        <section class="parameters__contain-wh">
+          <section
+            data-genero="hombre"
+            class="parameters__subcontain parameters__subcontain-2 parameters__subcontain-gender"
+          >
+            <div class="parameters__subcontain-image">
+              <img src="./assets/men.png" alt="" />
+            </div>
+            <h4>Sr</h4>
+          </section>
+        </section>
+      </article>
+
+      <article class="parameters__contain-age">
+        <h2 class="parameters__title-gen">Edad</h2>
+
+        <section class="parameters__button-group">
+          <button
+            id="button-decrement"
+            class="parameters__button button-decrement"
+          >
+            -
+          </button>
+          <div class="age-number">18</div>
+
+          <button
+            id="button-increment"
+            class="parameters__button button-increment"
+          >
+            +
+          </button>
+        </section>
+      </article>
+      <article class="calculate__button-contain">
+        <button class="calculate__button">CALCULAR</button>
+      </article>
+
+      <article class="resultado__container">
+        <section class="resultado__back" data-cerrar="cerrar">
+          <img src="./assets/assets_icons/back.svg" alt="" />
+        </section>
+        <section class="resultado__texto">
+          <h2 class="resultado__texto-sup">Tu IMC es</h2>
+          <h3 id="imcEstatus">Saludable</h3>
+        </section>
+        <section class="resultado__color">
+          <div
+            class="resultado__color-amarillo resultado__color-contenedor"
+          ></div>
+          <div class="resultado__color-verde resultado__color-contenedor"></div>
+          <div
+            class="resultado__color-naranja resultado__color-contenedor"
+          ></div>
+          <div class="resultado__color-rojo resultado__color-contenedor"></div>
+        </section>
+        <section class="resultado__descripcion">
+          <h5 data-valor="peso">Tu peso es: <span></span></h5>
+          <h5 data-valor="imc">Tu IMC es: <span></span></h5>
+          <h5 data-valor="rango">Rango IMC ideal: <span>18.5 / 24.9</span></h5>
+          <h5 data-valor="tasa">Tasa metabolica: <span></span></h5>
+        </section>
+        <button class="guardar__button" data-cerrar="cerrar">Volver</button>
+      </article>
+    </main>
+    <script src="src/index.js" type="module" defer></script>
+  </body>
+</html>

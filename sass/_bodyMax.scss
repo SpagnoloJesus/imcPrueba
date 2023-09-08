@@ -1,0 +1,37 @@
+html {
+  background-color: gainsboro;
+  background-image: url("../assets/color.jpeg");
+
+  background-size: contain;
+}
+body {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: solid 3px rgb(212, 208, 208);
+
+  @media (min-height: 950px) {
+    position: relative;
+    top: 60px;
+  }
+  main {
+    @media (min-height: 880px) {
+      margin-top: 60px;
+    }
+
+    @media (max-height: 700px) {
+      margin-top: 0px;
+    }
+  }
+}
+// max-width: 480px;
+//   margin: 0 auto;
+
+//   display: flex;
+//   margin: auto;
+//   background-color: gainsboro;
+//   background-image: url("../assets/color.jpeg");
+
+//   background-size: contain;
